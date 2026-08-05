@@ -1,0 +1,24 @@
+# Ignore datasets
+data/
+
+# Ignore config
+python/config/config.ini
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+etl.log
+
+# VS Code
+.vscode/
+
+# Ignore Power BI dashboard
+powerbi/Banking_Fraud_Analytics.pbix
+
+*.pbix
+
