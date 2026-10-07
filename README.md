@@ -2,7 +2,7 @@
 
 # 🏦 Banking Fraud Analytics
 
-### End-to-End ETL Pipeline | AWS S3 | Python | PostgreSQL | Power BI
+### Fraud Analytics & Business Intelligence | Python | SQL | PostgreSQL | Power BI | AWS
 
 </p>
 
@@ -26,56 +26,88 @@
 
 </p>
 
+---
 
 ## 📌 Project Overview
 
-This project demonstrates a complete end-to-end Banking Fraud Analytics solution built using a modern ETL architecture. The objective is to ingest raw banking transaction data, transform it into business-ready datasets, store it in a PostgreSQL data warehouse, and build an interactive Power BI dashboard for fraud monitoring and business insights.
+**Banking Fraud Analytics** is an end-to-end data analytics project focused on analyzing millions of banking transactions to identify fraud patterns, high-risk transaction behavior, and key business KPIs.
 
-The project follows the **Bronze → Silver → Gold** data architecture commonly used in modern data engineering and analytics platforms.
+The project uses **Python and Pandas for data preparation and ETL, PostgreSQL and SQL for analytical processing, and Power BI for interactive reporting and business insights**.
+
+AWS S3 is used as the raw data storage layer, while a **Bronze → Silver → Gold** architecture organizes the data from raw transactions to business-ready analytical datasets.
+
+The primary objective is to transform raw transaction data into reliable, analysis-ready data and use it to support **fraud monitoring and data-driven business decisions**.
 
 ---
+
 # ⭐ Project Highlights
 
-- Processed **6.3+ Million Banking Transactions**
-- Built an End-to-End **Bronze → Silver → Gold ETL Pipeline**
-- Developed an automated ETL workflow using **Python**
-- Stored and transformed data using **PostgreSQL**
-- Designed a **Star Schema** data model
-- Created **5 Interactive Power BI Dashboard Pages**
-- Generated Business Insights and Fraud Monitoring KPIs
-- Implemented Logging and Data Validation
+* Analyzed **6.3+ million banking transactions**
+* Built a structured **Python ETL workflow** for data extraction, validation, transformation, and loading
+* Used **AWS S3** for raw transaction data storage
+* Organized data using a **Bronze → Silver → Gold** architecture
+* Used **PostgreSQL and SQL** for transaction and fraud analysis
+* Designed a **Star Schema** for analytical reporting
+* Calculated fraud, transaction, and financial KPIs
+* Built **5 interactive Power BI dashboard pages**
+* Performed transaction, fraud, customer, and time-based analysis
+* Implemented **data validation and logging** during the ETL process
+* Generated actionable **business insights and recommendations**
+
+---
 
 # 📑 Table of Contents
 
-- Project Overview
-- Business Problem
-- Project Highlights
-- Project Architecture
-- Technology Stack
-- Project Workflow
-- ETL Pipeline
-- Database Design
-- Power BI Dashboard
-- Dashboard Screenshots
-- Business Insights
-- Business Recommendations
-- Project Structure
-- Installation Guide
-- Future Improvements
-- Author
+* [Project Overview](#-project-overview)
+* [Business Problem](#-business-problem)
+* [Analytical Objectives](#-analytical-objectives)
+* [Project Highlights](#-project-highlights)
+* [Project Architecture](#-project-architecture)
+* [Technology Stack](#-technology-stack)
+* [Project Workflow](#-project-workflow)
+* [Data Preparation & ETL](#-data-preparation--etl)
+* [Database Design](#-database-design)
+* [SQL Analysis](#-sql-analysis)
+* [Power BI Dashboard](#-power-bi-dashboard)
+* [Dashboard Screenshots](#-dashboard-screenshots)
+* [Key Business Insights](#-key-business-insights)
+* [Business Recommendations](#-business-recommendations)
+* [Project Structure](#-project-structure)
+* [How to Run the Project](#-how-to-run-the-project)
+* [Future Enhancements](#-future-enhancements)
+* [Author](#-author)
+
+---
 
 # 🎯 Business Problem
 
-Financial institutions process millions of transactions every day, making fraud detection a critical business challenge.
+Financial institutions process millions of transactions, making fraud monitoring an important business and operational challenge.
 
-The goal of this project is to:
+The project focuses on using transaction data to answer questions such as:
 
-- Monitor transaction activity
-- Identify fraudulent transactions
-- Analyze customer transaction behavior
-- Build business-ready datasets
-- Generate actionable business recommendations
-- Visualize KPIs using Power BI
+* How frequently does fraud occur?
+* Which transaction types have the highest fraud activity?
+* What is the financial impact of fraudulent transactions?
+* How does transaction activity vary over time?
+* Which transactions require additional monitoring?
+* What patterns can help financial institutions improve fraud monitoring?
+
+The goal is to convert raw transaction data into **actionable analytical insights** that can support fraud monitoring and business decision-making.
+
+---
+
+# 📊 Analytical Objectives
+
+The analysis focuses on:
+
+* Measuring overall transaction activity
+* Calculating fraud transaction volume and fraud rate
+* Analyzing fraudulent transactions by transaction type
+* Identifying high-value and potentially high-risk transactions
+* Understanding transaction behavior across time
+* Analyzing customer transaction behavior
+* Monitoring fraud trends through interactive dashboards
+* Providing recommendations based on observed transaction patterns
 
 ---
 
@@ -83,137 +115,221 @@ The goal of this project is to:
 
 ![Architecture](docs/architecture.png)
 
----
-
-# ⚙ Tech Stack
-
-| Technology | Purpose |
-|------------|----------|
-| Python | ETL Pipeline |
-| Pandas | Data Processing |
-| AWS S3 | Raw Data Storage |
-| PostgreSQL | Data Warehouse |
-| SQL | Data Analysis |
-| Power BI | Dashboard & Visualization |
-| Git & GitHub | Version Control |
-
----
-
-# 📂 Project Workflow
+The project follows a structured analytics workflow:
 
 ```text
-PaySim Dataset
-        │
-        ▼
-AWS S3
-        │
-        ▼
-Python ETL Pipeline
-(Extract → Validate → Transform → Load)
-        │
-        ▼
-Bronze Layer
-(Raw Data)
-        │
-        ▼
-Silver Layer
-(Cleaned Business Data)
-        │
-        ▼
-Gold Layer
-(Business Views)
-        │
-        ▼
-Power BI Dashboard
-        │
-        ▼
-Business Insights & Recommendations
+Raw PaySim Transaction Data
+            │
+            ▼
+        AWS S3
+     Raw Data Storage
+            │
+            ▼
+      Python / Pandas
+   Data Preparation & ETL
+            │
+            ▼
+       Bronze Layer
+        Raw Data
+            │
+            ▼
+       Silver Layer
+   Cleaned Analytical Data
+            │
+            ▼
+        Gold Layer
+    Business-Ready Views
+            │
+            ▼
+       PostgreSQL
+            │
+            ▼
+       SQL Analysis
+            │
+            ▼
+        Power BI
+    Interactive Dashboards
+            │
+            ▼
+   Business Insights &
+     Recommendations
 ```
 
 ---
 
-# 🛠 ETL Pipeline
+# ⚙ Technology Stack
+
+| Technology   | Purpose                           |
+| ------------ | --------------------------------- |
+| Python       | Data Preparation & ETL            |
+| Pandas       | Data Cleaning & Transformation    |
+| AWS S3       | Raw Data Storage                  |
+| PostgreSQL   | Analytical Database               |
+| SQL          | Data Analysis & KPI Calculation   |
+| Power BI     | Dashboard & Business Intelligence |
+| DAX          | Power BI Measures & Analysis      |
+| Git & GitHub | Version Control                   |
+
+---
+
+# 🔄 Project Workflow
+
+The project follows an end-to-end analytics workflow:
+
+### 1. Data Ingestion
+
+Raw PaySim transaction data is stored in **AWS S3**.
+
+### 2. Data Preparation
+
+Python and Pandas are used to:
+
+* Extract transaction data
+* Validate incoming data
+* Clean and transform fields
+* Convert data types
+* Create timestamps
+* Prepare analytical datasets
+
+### 3. Data Organization
+
+The processed data is organized into:
+
+* **Bronze Layer** — raw transaction data
+* **Silver Layer** — cleaned and structured analytical data
+* **Gold Layer** — business-ready SQL views
+
+### 4. SQL Analysis
+
+PostgreSQL and SQL are used to analyze:
+
+* Transaction activity
+* Fraud transactions
+* Fraud rates
+* Transaction types
+* High-value transactions
+* Time-based patterns
+* Customer transaction behavior
+
+### 5. Business Intelligence
+
+Power BI is used to transform the analytical results into interactive dashboards.
+
+### 6. Insights & Recommendations
+
+The final analysis is used to identify important fraud patterns and provide business recommendations.
+
+---
+
+# 🛠 Data Preparation & ETL
 
 ## Bronze Layer
 
-The Bronze Layer stores raw transaction data exactly as received from the source without any business transformations.
+The Bronze Layer preserves the raw transaction data before business transformations.
 
-### Tasks Performed
+### Tasks
 
-- Data Extraction
-- Data Validation
-- Data Loading
-- Logging
-- Raw Data Preservation
+* Data extraction
+* Data validation
+* Raw data loading
+* Logging
+* Raw data preservation
 
 ---
 
 ## Silver Layer
 
-The Silver Layer converts raw data into business-ready datasets.
+The Silver Layer contains cleaned and structured analytical data.
 
 ### Transformations
 
-- Column Renaming
-- Data Type Conversion
-- Boolean Conversion
-- Timestamp Creation
-- Transaction Type Lookup
-- Dimension Table Integration
-- Fact Table Creation
+* Column renaming
+* Data type conversion
+* Boolean conversion
+* Timestamp creation
+* Transaction type lookup
+* Dimension table integration
+* Fact table creation
 
 ---
 
 ## Gold Layer
 
-The Gold Layer contains business-ready SQL views optimized for reporting.
+The Gold Layer contains business-ready SQL views used for reporting and analysis.
 
-Examples:
+Examples include:
 
-- Daily Fraud Trend
-- Hourly Fraud Analysis
-- High Value Transactions
-- Transaction Summary
+* Daily Fraud Trend
+* Hourly Fraud Analysis
+* High Value Transactions
+* Transaction Summary
 
 ---
 
 # 🗄 Database Design
 
+The analytical database uses a structured model consisting of a transaction fact table and supporting dimensions.
+
 ## Fact Table
 
-### silver.fact_transactions
+### `silver.fact_transactions`
 
 Contains:
 
-- Transaction ID
-- Transaction Type
-- Amount
-- Customer Information
-- Fraud Flag
-- Transaction Timestamp
+* Transaction ID
+* Transaction Type
+* Amount
+* Customer Information
+* Fraud Flag
+* Transaction Timestamp
 
 ---
 
 ## Dimension Tables
 
-### silver.dim_date
+### `silver.dim_date`
 
-- Date
-- Year
-- Month
-- Quarter
-- Day Name
+Contains:
 
-### silver.dim_transaction_type
+* Date
+* Year
+* Month
+* Quarter
+* Day Name
 
-- Transaction Type ID
-- Transaction Type
+### `silver.dim_transaction_type`
+
+Contains:
+
+* Transaction Type ID
+* Transaction Type
+
+This structure supports efficient SQL analysis and Power BI reporting.
+
+---
+
+# 🔎 SQL Analysis
+
+PostgreSQL and SQL are used to answer business questions related to transaction activity and fraud.
+
+The analysis includes:
+
+* Transaction volume analysis
+* Fraud transaction analysis
+* Fraud rate calculation
+* Fraud amount analysis
+* Transaction type comparison
+* High-value transaction analysis
+* Time-based transaction analysis
+* Customer transaction behavior
+
+The SQL analysis produces business-ready datasets and views that are used for Power BI reporting.
 
 ---
 
 # 📊 Power BI Dashboard
 
-The dashboard consists of **5 interactive pages**.
+The Power BI solution contains **5 interactive pages** designed for fraud monitoring and business analysis.
 
 ---
 
@@ -221,17 +337,17 @@ The dashboard consists of **5 interactive pages**.
 
 ### KPIs
 
-- Total Transactions
-- Total Transaction Amount
-- Fraud Transactions
-- Fraud Amount
-- Fraud Rate
+* Total Transactions
+* Total Transaction Amount
+* Fraud Transactions
+* Fraud Amount
+* Fraud Rate
 
-### Visuals
+### Analysis
 
-- Daily Transaction Trend
-- Transaction Distribution
-- Fraud Overview
+* Daily Transaction Trend
+* Transaction Distribution
+* Overall Fraud Overview
 
 ---
 
@@ -239,44 +355,45 @@ The dashboard consists of **5 interactive pages**.
 
 ### Analysis Includes
 
-- Fraud by Transaction Type
-- Fraud Amount
-- Fraud Rate
-- Fraud Summary Table
-- High Risk Transaction Types
+* Fraud by Transaction Type
+* Fraud Amount
+* Fraud Rate
+* Fraud Summary
+* High-Risk Transaction Types
 
 ---
 
 ## 3️⃣ Customer & Transaction Analysis
 
-### Insights
+### Analysis Includes
 
-- High Value Transactions
-- Transaction Type Distribution
-- Customer Transaction Behavior
-- Top Transaction Categories
+* High-Value Transactions
+* Transaction Type Distribution
+* Customer Transaction Behavior
+* Top Transaction Categories
 
 ---
 
-## 4️⃣ Time Intelligence Dashboard
+## 4️⃣ Time Intelligence
 
-### Analysis
+### Analysis Includes
 
-- Daily Transaction Trend
-- Transactions by Hour
-- Transactions by Weekday
-- Fraud Trend Over Time
+* Daily Transaction Trend
+* Transactions by Hour
+* Transactions by Weekday
+* Fraud Trend Over Time
 
 ---
 
 ## 5️⃣ Business Insights & Recommendations
 
-Includes
+The final dashboard page summarizes:
 
-- Executive Summary
-- Key Business Findings
-- Business Recommendations
-- Future Enhancements
+* Key analytical findings
+* Important fraud patterns
+* Business implications
+* Recommended actions
+* Future analytical opportunities
 
 ---
 
@@ -314,21 +431,24 @@ Includes
 
 # 📈 Key Business Insights
 
-- Processed over **6.3 million banking transactions**.
-- Fraud represents a very small percentage of total transactions but has significant financial impact.
-- CASH_OUT and TRANSFER transactions contribute the highest fraud volume.
-- Transaction activity varies significantly throughout the day.
-- High-value transactions require additional monitoring.
+* Processed over **6.3 million banking transactions**.
+* Fraud represents a small percentage of total transactions but has a significant financial impact.
+* **CASH_OUT** and **TRANSFER** transactions contribute the highest fraud volume.
+* Transaction activity varies across different times of the day.
+* High-value transactions require additional monitoring.
+* Fraud trends can be monitored through interactive Power BI reporting.
 
 ---
 
 # 💡 Business Recommendations
 
-- Implement real-time fraud alerts for high-value transactions.
-- Apply stricter verification for CASH_OUT and TRANSFER operations.
-- Monitor peak transaction hours with enhanced fraud detection.
-- Deploy machine learning models for anomaly detection.
-- Continuously monitor fraud trends through Power BI dashboards.
+Based on the analysis:
+
+* Implement additional monitoring for high-value transactions.
+* Apply stricter verification for **CASH_OUT** and **TRANSFER** operations.
+* Monitor peak transaction periods for unusual activity.
+* Use interactive Power BI reporting for continuous fraud monitoring.
+* Explore machine learning-based anomaly detection as a future enhancement.
 
 ---
 
@@ -366,19 +486,19 @@ Banking-Fraud-Analytics
 
 # 🚀 How to Run the Project
 
-## Clone Repository
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/AkhileshDesai19/Banking-Fraud-Analytics.git
 ```
 
-## Install Dependencies
+## 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Configure PostgreSQL
+## 3. Configure PostgreSQL
 
 Update the PostgreSQL credentials in:
 
@@ -386,25 +506,19 @@ Update the PostgreSQL credentials in:
 python/config/config.ini
 ```
 
----
-
-## Run Bronze ETL
+## 4. Run Bronze ETL
 
 ```bash
 python python/main.py
 ```
 
----
-
-## Run Silver ETL
+## 5. Run Silver ETL
 
 ```bash
 python python/silver_etl.py
 ```
 
----
-
-## Open Power BI
+## 6. Open Power BI
 
 Open:
 
@@ -412,18 +526,20 @@ Open:
 Banking_Fraud_Analytics.pbix
 ```
 
-Click **Refresh** to load the latest data.
+Click **Refresh** to load the latest analytical data.
 
 ---
 
 # 🔮 Future Enhancements
 
-- Real-time streaming with Apache Kafka
-- Machine Learning fraud prediction
-- Automated ETL scheduling with Apache Airflow
-- AWS Lambda integration
-- Snowflake Data Warehouse
-- Interactive web dashboard using Streamlit
+Potential future improvements include:
+
+* Real-time fraud monitoring using Apache Kafka
+* Machine learning-based fraud prediction
+* Automated ETL scheduling with Apache Airflow
+* AWS Lambda integration
+* Snowflake data warehouse integration
+* Interactive web analytics using Streamlit
 
 ---
 
@@ -431,10 +547,11 @@ Click **Refresh** to load the latest data.
 
 **Akhilesh Desai**
 
-- 💼 Aspiring Data Analyst
-- 🐍 Python | SQL | PostgreSQL | Power BI | AWS
-- 🔗 LinkedIn: https://www.linkedin.com/in/akhileshdesai19
-- 💻 GitHub: https://github.com/AkhileshDesai19
+**Data Analyst | SQL | Python | PostgreSQL | Power BI | AWS**
+
+🔗 LinkedIn: https://www.linkedin.com/in/akhileshdesai19
+
+💻 GitHub: https://github.com/AkhileshDesai19
 
 ---
 
